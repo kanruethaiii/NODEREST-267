@@ -65,7 +65,7 @@ app.put('/books/:id', (req, res) => {
 app.delete('/books/:id', (req, res) => {
     const book = books.find(b => b.id === parseInt(req.params.id));
     if (!book) res.status(404).send('Book not found');
-    const index = books.indexOf(book);
+    const index = books.indexOf(book);  
     books.splice(index, 1);
     res.send(book);
 });
